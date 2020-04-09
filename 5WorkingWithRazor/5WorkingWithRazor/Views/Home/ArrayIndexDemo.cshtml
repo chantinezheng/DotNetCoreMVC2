@@ -1,0 +1,25 @@
+﻿@model Product[]
+@{
+    ViewData["Title"] = "Prodcut Name";
+}
+
+<h1>Product Name</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var t in Model)
+        {
+            <tr>
+                <td>@t.Name</td>
+                <td>@($"{t.Price:C2}")</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
