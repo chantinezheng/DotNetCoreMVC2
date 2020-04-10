@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@*@model IEnumerable<Product>
 @{
     ViewData["Title"] = "List";
 }
@@ -10,5 +10,17 @@
         @p.Description
         <h4>@p.Price.ToString("c")</h4>
     </div>
+}*@
+
+
+@model ProductsListViewModel
+@foreach(var p in Model.Products)
+{
+    <div>
+        <h3>@p.Name</h3>
+        @p.Description
+        <h4>@p.Price.ToString("c")</h4>
+    </div>
 }
 
+<div page-model="@Model.PagingInfo" page-action="List"></div>
